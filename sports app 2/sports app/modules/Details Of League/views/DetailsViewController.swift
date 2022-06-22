@@ -15,8 +15,9 @@ class DetailsViewController: UIViewController {
 
     
     // collections view
-
-
+    @IBOutlet weak var upComingCollectionView: UICollectionView!
+    @IBOutlet weak var latestResultCollectionView: UICollectionView!
+    @IBOutlet weak var teamsCollectionView: UICollectionView!
     // dBmanger
     var db = DBmanger.sharedInstance
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
