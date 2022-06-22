@@ -8,7 +8,10 @@
 import UIKit
 
 class UpComingCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var timeOfEvent: UILabel!
+    
+    @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var dateOfEvent: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
