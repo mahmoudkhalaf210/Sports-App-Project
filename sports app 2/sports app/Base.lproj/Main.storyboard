@@ -264,17 +264,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ey-QX-bOp">
-                                <rect key="frame" x="0.0" y="133" width="414" height="8"/>
+                                <rect key="frame" x="0.0" y="136" width="414" height="8"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="A8G-5i-Oiv"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbw-WH-EWn">
-                                <rect key="frame" x="1" y="142" width="412" height="621"/>
+                                <rect key="frame" x="1" y="145" width="412" height="618"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGv-ge-I09">
-                                        <rect key="frame" x="1" y="1" width="412" height="621"/>
+                                        <rect key="frame" x="1" y="1" width="412" height="618"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Up Coming Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWY-da-fFU">
                                                 <rect key="frame" x="10" y="10" width="300" height="30"/>
@@ -420,7 +420,7 @@
                             <constraint firstItem="AGW-5L-bEs" firstAttribute="trailing" secondItem="Wbw-WH-EWn" secondAttribute="trailing" constant="1" id="cpc-eM-nxa"/>
                             <constraint firstItem="4IQ-DW-Bvv" firstAttribute="leading" secondItem="AGW-5L-bEs" secondAttribute="leading" constant="10" id="fyf-HQ-6wr"/>
                             <constraint firstItem="4IQ-DW-Bvv" firstAttribute="top" secondItem="AGW-5L-bEs" secondAttribute="top" constant="5" id="mpy-u2-j5R"/>
-                            <constraint firstItem="8Ey-QX-bOp" firstAttribute="top" secondItem="YFF-Wr-ZZk" secondAttribute="bottom" id="pmM-3k-fQO"/>
+                            <constraint firstItem="8Ey-QX-bOp" firstAttribute="top" secondItem="YFF-Wr-ZZk" secondAttribute="bottom" constant="3" id="pmM-3k-fQO"/>
                             <constraint firstItem="Wbw-WH-EWn" firstAttribute="leading" secondItem="AGW-5L-bEs" secondAttribute="leading" constant="1" id="tJ1-jL-gDo"/>
                             <constraint firstItem="Wbw-WH-EWn" firstAttribute="top" secondItem="8Ey-QX-bOp" secondAttribute="bottom" constant="1" id="xnE-AQ-Cli"/>
                         </constraints>

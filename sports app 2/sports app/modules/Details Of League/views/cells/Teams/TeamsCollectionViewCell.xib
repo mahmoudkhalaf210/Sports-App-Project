@@ -10,14 +10,31 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="teams" id="gTV-IL-0wX" customClass="TeamsCollectionViewCell" customModule="sports_app" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="340" height="194"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="340" height="194"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k7h-3e-wM2">
+                        <rect key="frame" x="10" y="10" width="320" height="174"/>
+                    </imageView>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <point key="canvasLocation" x="139" y="91"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="k7h-3e-wM2" secondAttribute="trailing" constant="10" id="5w2-4y-bd6"/>
+                <constraint firstItem="k7h-3e-wM2" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="CK6-mG-CoM"/>
+                <constraint firstItem="k7h-3e-wM2" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="PzX-XB-hdM"/>
+                <constraint firstItem="k7h-3e-wM2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Suu-I8-LYJ"/>
+                <constraint firstAttribute="bottom" secondItem="k7h-3e-wM2" secondAttribute="bottom" constant="10" id="u0R-rt-Wug"/>
+                <constraint firstItem="k7h-3e-wM2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="wD6-P5-Vut"/>
+            </constraints>
+            <size key="customSize" width="340" height="194"/>
+            <connections>
+                <outlet property="imageOfTeam" destination="k7h-3e-wM2" id="qvr-nt-dai"/>
+            </connections>
+            <point key="canvasLocation" x="347.82608695652175" y="138.61607142857142"/>
         </collectionViewCell>
     </objects>
 </document>

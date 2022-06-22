@@ -8,7 +8,8 @@
 import UIKit
 
 class TeamsCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var imageOfTeam: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
