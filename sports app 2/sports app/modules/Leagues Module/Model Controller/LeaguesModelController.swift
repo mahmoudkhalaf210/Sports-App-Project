@@ -18,12 +18,14 @@ class LeaguesModelController : ILeaguesModel {
         self.leaguePresenter = leaguePresenter
     }
     
-    func fetchDataFromApi(endpoint: String , str : String) {
-        apiservice.fetchLeaguess(endPoint: endpoint , str : str) { leagues, error in
+    func fetchDataFromApi(endpoint: String ) {
+        
+        apiservice.fetchLeaguess(endPoint: endpoint, Completion: { leagues, error in
             if let leagues = leagues {
                 self.leaguePresenter.onSuccess(leagues: leagues)
             }
-        }
+        })
+    
     }
     
     

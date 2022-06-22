@@ -38,7 +38,8 @@ extension DBmanger {
         league.setValue(leagueitem.idleague , forKey: "idleague")
         league.setValue(leagueitem.strleague , forKey: "strleague")
         league.setValue(leagueitem.strsport , forKey: "strsport")
-
+        league.setValue(leagueitem.strBadge , forKey: "strBadge")
+        league.setValue(leagueitem.strYoutube , forKey: "strYoutube")
         do {
             try managedContext.save()
             print("data saved")
@@ -50,7 +51,7 @@ extension DBmanger {
     
     
     
-    func addLeague(AppDelegate : AppDelegate , idleague : String , strleague : String , strsport : String){
+    func addLeague(AppDelegate : AppDelegate , idleague : String , strleague : String , strsport : String , strBadge : String , strYoutube : String){
         // get the shared application delegate
         
         let managedContext = AppDelegate.persistentContainer.viewContext
@@ -60,7 +61,8 @@ extension DBmanger {
         league.setValue(idleague , forKey: "idleague")
         league.setValue(strleague , forKey: "strleague")
         league.setValue(strsport , forKey: "strsport")
-
+        league.setValue(strBadge , forKey: "strBadge")
+        league.setValue(strYoutube , forKey: "strYoutube")
         do {
             try managedContext.save()
         }catch let error as NSError {

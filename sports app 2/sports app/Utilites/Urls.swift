@@ -17,3 +17,18 @@ struct UrlServices {
     }
     
 }
+
+
+// https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s=Soccer
+
+
+struct UrlServiceOfLeague {
+    var endPoint : String = ""
+    var url : String  {
+        return "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s=\(endPoint)"
+    }
+}
+
+
+
+

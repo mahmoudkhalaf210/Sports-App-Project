@@ -27,7 +27,7 @@ class LeagueTableViewCell: UITableViewCell {
     // MARK: - func click to go to webPage
     @IBAction func GoToLink(_ sender: Any) {
 
-        delegate?.onClickButton(index: (index?.row)!)
+        delegate?.onClickButton(index: (index?.row)! )
     }
     
     
@@ -43,14 +43,12 @@ class LeagueTableViewCell: UITableViewCell {
     func SetupLeagueInCell(league : League?, leagueItem : LeagueItem?) {
         
         if league != nil {
-        
             titleLeagueInCell.text = league?.strLeague
-       // LinkLeagueInCell.text = league.strLeagueAlternate
-      //  LinkLeagueInCell.text = "https://www.youtube.com/watch?v=i2yhyaNb4ac"
-            imageLeagueInCell.sd_setImage(with: URL(string: "\(league!.strSport)"), placeholderImage: UIImage(named: "logo1.jpeg")) }else {
-                
+            imageLeagueInCell.sd_setImage(with: URL(string: "\(league?.strBadge ?? "https://www.thesportsdb.com/images/media/league/badge/6shh7l1645299895.png")"), placeholderImage: UIImage(named: "luffy.jpeg"))
+            
+        }else {
                 titleLeagueInCell.text = leagueItem?.strleague
-                imageLeagueInCell.sd_setImage(with: URL(string: "\(String(describing: leagueItem!.strsport))"), placeholderImage: UIImage(named: "logo1.jpeg"))
+            imageLeagueInCell.sd_setImage(with: URL(string: "\(leagueItem?.strBadge ?? "https://www.thesportsdb.com/images/media/league/badge/6shh7l1645299895.png")") , placeholderImage: UIImage(named: "logo1.jpeg"))
             }
         
     }
@@ -82,6 +80,6 @@ class LeagueTableViewCell: UITableViewCell {
 // MARK: - Protocol  <<<< link to WebView
 
 protocol WebViewProtocol {
-    func onClickButton(index : Int)
+    func onClickButton(index : Int )
 }
 

@@ -57,7 +57,7 @@ class DetailsViewController: UIViewController {
           /*  if item.strleague == league?.strLeague{
                 print("not add item ")
             }else {*/
-                db.addLeague(AppDelegate: appDelegate , idleague: league?.idLeague ?? "", strleague: league?.strLeague ?? "", strsport: league?.strSport ?? "")
+        db.addLeague(AppDelegate: appDelegate , idleague: league?.idLeague ?? "", strleague: league?.strLeague ?? "", strsport: league?.strSport ?? "" , strBadge: league?.strBadge ?? ""  , strYoutube: league?.strYoutube ?? "" )
                 makeColorFavourite()
     
             //}

@@ -15,16 +15,14 @@ class leaguesPresenter : ILeaguesPresenter {
     
     
     let leagueView : ILeaguesView
-    var strSport : String
     
-    init (leagueView : ILeaguesView , str : String){
+    init (leagueView : ILeaguesView ){
         self.leagueView = leagueView
-        self.strSport = str
     }
     
     func fetchData(endpoint: String ) {
         let homeModel = LeaguesModelController(leaguePresenter: self)
-        homeModel.fetchDataFromApi(endpoint: endpoint, str: strSport)
+        homeModel.fetchDataFromApi(endpoint: endpoint)
         
     }
     

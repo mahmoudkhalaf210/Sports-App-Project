@@ -11,13 +11,17 @@ import Foundation
 
 // MARK: - Welcome
 struct Leagues: Codable {
-    let leagues: [League]
+    let countries: [League]?
 }
 
 // MARK: - League
 struct League: Codable {
-    let idLeague : String
-    let strLeague : String
-    let strSport : String
-    let strLeagueAlternate: String?
+    var idLeague : String?
+    var strLeague : String?
+    var strSport : String?
+    var strYoutube : String?
+    var strPoster : String?
+    var strBadge : String?
+    // search one name
+    var strLeagueAlternate : String?
 }

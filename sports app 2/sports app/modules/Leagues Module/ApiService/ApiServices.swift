@@ -9,5 +9,5 @@ import Foundation
 
 
 protocol ApiServiceLeagues {
-    func fetchLeaguess(endPoint : String, str : String , Completion : @escaping (([League]? , Error?) -> Void))
+    func fetchLeaguess(endPoint : String , Completion : @escaping (([League]? , Error?) -> Void))
 }

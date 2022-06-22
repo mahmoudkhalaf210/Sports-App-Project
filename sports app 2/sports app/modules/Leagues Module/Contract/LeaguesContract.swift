@@ -23,6 +23,6 @@ protocol ILeaguesPresenter{
 
 protocol ILeaguesModel {
     
-    func fetchDataFromApi(endpoint : String , str : String)
+    func fetchDataFromApi(endpoint : String )
     
 }

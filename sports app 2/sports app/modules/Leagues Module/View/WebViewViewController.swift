@@ -13,11 +13,16 @@ import WebKit
 class WebViewViewController: UIViewController {
     @IBOutlet weak var MyWebView: WKWebView!
     
+    var youtube : String! = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-        MyWebView.load(URLRequest(url: URL(string: "https://www.youtube.com/watch?v=i2yhyaNb4ac")!))
+        print(youtube!)
+        
+        MyWebView.load(URLRequest(url: URL(string: "https://www.youtube.com/channel/UC3Guly6AbOr3PqrZMaV6vog" )!))
+        
+        //"https://www.youtube.com/watch?v=i2yhyaNb4ac"
 
     }
     

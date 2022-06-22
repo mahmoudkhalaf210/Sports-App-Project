@@ -8,9 +8,6 @@
 import UIKit
 
 
-
-
-
 class LeaguesViewController: UIViewController {
     
     var selectedRow : Int = 0
@@ -35,8 +32,8 @@ class LeaguesViewController: UIViewController {
         
         // MARK: - Use Presenter
 
-        let leaguesPresenter : ILeaguesPresenter = leaguesPresenter(leagueView: self, str: self.strSport )
-        leaguesPresenter.fetchData(endpoint: "all_leagues.php")
+        let leaguesPresenter : ILeaguesPresenter = leaguesPresenter(leagueView: self)
+        leaguesPresenter.fetchData(endpoint: strSport)
         
         // Do any additional setup after loading the view.
     }
@@ -51,29 +48,19 @@ extension LeaguesViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "leaguecell", for: indexPath) as? LeagueTableViewCell
         cell?.SetupLeagueInCell(league: leagues[indexPath.row], leagueItem: nil)
+        // link
         cell?.delegate = self
        cell?.index = indexPath
-        
-        
         // make radius to cell
         cell?.clipsToBounds = true
         cell?.layer.cornerRadius = 50
-   
-      
-        
-        
         return cell!
     }
    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
-    
-    
-    
-    
-    
-    
+
 }
 
 // MARK: - UItable View Delegate
@@ -112,12 +99,14 @@ extension LeaguesViewController : ILeaguesView {
 // MARK: - Implementation of Protocol  <<<< link to WebView
 
 extension LeaguesViewController : WebViewProtocol {
-    // link = leagues[index].link
-    
     func onClickButton(index: Int) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "webview") as? WebViewViewController
+        vc?.youtube = leagues[index].strYoutube 
         present(vc!, animated: true, completion: nil)
     }
+    
+    // link = leagues[index].link
+  
     
     
     
