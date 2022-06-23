@@ -77,7 +77,6 @@ class DetailsViewController: UIViewController {
         
         
         
-        
         // data presenter of teams
        
         fetchdataFromTeamPresenter(str: league?.strLeague)
@@ -213,7 +212,8 @@ extension DetailsViewController : UICollectionViewDataSource {
         case latestResultCollectionView:
             do {
                 print("in latest")
-                return 20
+                print(events.count)
+                return LatestEvents.count
             }
         case teamsCollectionView:
             do {
@@ -234,8 +234,8 @@ extension DetailsViewController : UICollectionViewDataSource {
             return cell
         }
         else if (collectionView == latestResultCollectionView){
-            let cell : LatestResultCollectionViewCell = (latestResultCollectionView.dequeueReusableCell(withReuseIdentifier: "latest", for: indexPath) as?
-                                                         LatestResultCollectionViewCell)!
+            let cell : LatestResultCollectionViewCell = (latestResultCollectionView.dequeueReusableCell(withReuseIdentifier: "latest", for: indexPath) as? LatestResultCollectionViewCell)!
+            cell.setupDataInLateset(event: LatestEvents[indexPath.row])
             return cell
         }
         else {
@@ -274,8 +274,11 @@ extension DetailsViewController : ITeamView {
 extension DetailsViewController : IEventView {
     func renderEvents(events: [Event]) {
         self.events = events
+        self.LatestEvents = events
+        print(LatestEvents)
         DispatchQueue.main.sync {
             self.upComingCollectionView.reloadData()
+            self.latestResultCollectionView.reloadData()
         }
     }
     
@@ -302,3 +305,10 @@ extension DetailsViewController {
         vc2.dest3 = teams[selectedRowINTeam].strDescriptionDE
     }
 }
+
+
+
+// MARK: - make data of latest events (sort events and make it latest)
+
+
+
