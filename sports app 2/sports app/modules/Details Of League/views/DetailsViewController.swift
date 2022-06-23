@@ -10,6 +10,8 @@ import CoreData
 
 class DetailsViewController: UIViewController {
 
+    
+
     @IBOutlet weak var headerOfLeague: UILabel!
     @IBOutlet weak var favouriteButton: UIButton!
 
@@ -18,6 +20,10 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var latestResultCollectionView: UICollectionView!
     @IBOutlet weak var teamsCollectionView: UICollectionView!
     
+    
+    
+    // teams
+    var teams = [Team]()
     
     // dBmanger
     var db = DBmanger.sharedInstance
@@ -59,6 +65,13 @@ class DetailsViewController: UIViewController {
         upComingCollectionView.collectionViewLayout = layoutUpcoming
         latestResultCollectionView.collectionViewLayout = layoutlateset
         teamsCollectionView.collectionViewLayout = layoutTeams
+        
+        
+        
+        
+        // data presenter
+        let teamPresenter : ITeamPresenter = DetailsPresenter(teamsview: self)
+        teamPresenter.fetchDataOfTeams(endPoint: (league?.strLeague)!)
 
         
 
@@ -117,7 +130,7 @@ extension DetailsViewController : UICollectionViewDelegateFlowLayout {
         {
             return CGSize(width:400, height: 170)
         }
-        return CGSize(width:350, height: 400)
+        return CGSize(width:250, height: 200)
     }
 }
 
@@ -143,7 +156,7 @@ extension DetailsViewController : UICollectionViewDataSource {
         case teamsCollectionView:
             do {
                 print("in team")
-                return 30
+                return teams.count
             }
         default:
             return 20
@@ -163,6 +176,7 @@ extension DetailsViewController : UICollectionViewDataSource {
         }
         else {
             let cell : TeamsCollectionViewCell = (teamsCollectionView.dequeueReusableCell(withReuseIdentifier: "teams", for: indexPath) as? TeamsCollectionViewCell)!
+            cell.setupdata(team: teams[indexPath.row])
             return cell
         }
     }
@@ -174,5 +188,22 @@ extension DetailsViewController : UICollectionViewDataSource {
 
 
 
+
+extension DetailsViewController : ITeamView {
+    func renderTeams(teams: [Team]) {
+        print("teams >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        print(teams)
+        self.teams = teams
+        DispatchQueue.main.sync {
+            self.teamsCollectionView.reloadData()
+        }
+    }
+    
+    func postErrorInTeams(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    
+}
 
 

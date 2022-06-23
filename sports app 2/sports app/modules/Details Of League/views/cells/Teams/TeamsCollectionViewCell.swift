@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class TeamsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageOfTeam: UIImageView!
@@ -14,12 +15,16 @@ class TeamsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        makeImageCircle()
+      //  makeImageCircle()
         
         
         
     }
 
+    
+    func setupdata (team : Team) {
+        imageOfTeam.sd_setImage(with: URL(string: "\(team.strTeamBadge!)"), placeholderImage: UIImage(named: "luffy.jpeg"))
+    }
     
     
     

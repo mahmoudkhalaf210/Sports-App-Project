@@ -31,4 +31,19 @@ struct UrlServiceOfLeague {
 
 
 
+// https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League
+
+
+
+struct urlServiceOfTeam {
+    var endPoint : String = ""
+    var url : String  {
+        return "https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=\(endPoint)"
+    }
+    
+}
+
+
+
+
 

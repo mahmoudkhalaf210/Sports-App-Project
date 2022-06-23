@@ -9,10 +9,6 @@ import Foundation
 
 
 class leaguesPresenter : ILeaguesPresenter {
- 
-    
-
-    
     
     let leagueView : ILeaguesView
     

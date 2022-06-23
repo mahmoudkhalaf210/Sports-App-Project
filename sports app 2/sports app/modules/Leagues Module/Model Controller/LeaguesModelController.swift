@@ -23,6 +23,8 @@ class LeaguesModelController : ILeaguesModel {
         apiservice.fetchLeaguess(endPoint: endpoint, Completion: { leagues, error in
             if let leagues = leagues {
                 self.leaguePresenter.onSuccess(leagues: leagues)
+            }else {
+                self.leaguePresenter.onFailed(error: error as! Error)
             }
         })
     
