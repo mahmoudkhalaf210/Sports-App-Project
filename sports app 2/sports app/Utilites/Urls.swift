@@ -43,6 +43,14 @@ struct urlServiceOfTeam {
     
 }
 
+ // https://www.thesportsdb.com/api/v1/json/2/eventsseason.php?id=4617
+
+struct UrlServiceOfEvent {
+    var endPoint : String = ""
+    var url : String {
+        return "https://www.thesportsdb.com/api/v1/json/2/eventsseason.php?id=\(endPoint)"
+    }
+}
 
 
 

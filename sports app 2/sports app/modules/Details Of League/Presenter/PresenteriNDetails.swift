@@ -27,7 +27,9 @@ class DetailsPresenter : ITeamPresenter {
     func onFailedTeams(error: Error) {
         teamsView.postErrorInTeams(error: error)
     }
-    
-    
-    
+
 }
+
+
+
+

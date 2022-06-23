@@ -30,3 +30,20 @@ protocol ITeamModel {
     
 }
 
+// Events
+
+protocol IEventView {
+    func renderEvents (events : [Event])
+    func postErrorInEvents(error : Error)
+}
+
+protocol IEventPresenter{
+    func fetchdataOfEvents (endPoint : String)
+    func onSuccessEvents(events : [Event])
+    func onFailedEvents(error : Error)
+}
+
+protocol IEventModel {
+    func fetchDataOfEventsFromApi(endPoint : String)
+}
+

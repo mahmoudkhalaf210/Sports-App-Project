@@ -24,6 +24,8 @@ class DetailsViewController: UIViewController {
     
     // teams
     var teams = [Team]()
+    // events
+    var events = [Event]()
     
     // dBmanger
     var db = DBmanger.sharedInstance
@@ -69,10 +71,13 @@ class DetailsViewController: UIViewController {
         
         
         
-        // data presenter
+        // data presenter of teams
         let teamPresenter : ITeamPresenter = DetailsPresenter(teamsview: self)
         teamPresenter.fetchDataOfTeams(endPoint: (league?.strLeague)!)
-
+        
+        // data presenter of events
+        let eventPresenter : IEventPresenter = PresenterInEventDetails(eventsView: self)
+        eventPresenter.fetchdataOfEvents(endPoint: (league?.idLeague)!)
         
 
     }
@@ -124,7 +129,7 @@ extension DetailsViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         if collectionView == upComingCollectionView{
-            return CGSize(width: 200, height: 200)
+            return CGSize(width: 350, height: 200)
         }
         else if (collectionView == latestResultCollectionView)
         {
@@ -146,7 +151,7 @@ extension DetailsViewController : UICollectionViewDataSource {
         case upComingCollectionView :
             do {
                 print("in upComing")
-                return 10
+                return events.count
             }
         case latestResultCollectionView:
             do {
@@ -167,6 +172,8 @@ extension DetailsViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if (collectionView == upComingCollectionView){
             let cell : UpComingCollectionViewCell = (upComingCollectionView.dequeueReusableCell(withReuseIdentifier: "upcoming", for: indexPath) as? UpComingCollectionViewCell)!
+            
+            cell.setUpdata(event: events[indexPath.row])
             return cell
         }
         else if (collectionView == latestResultCollectionView){
@@ -200,6 +207,20 @@ extension DetailsViewController : ITeamView {
     }
     
     func postErrorInTeams(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+}
+
+extension DetailsViewController : IEventView {
+    func renderEvents(events: [Event]) {
+        self.events = events
+        DispatchQueue.main.sync {
+            self.upComingCollectionView.reloadData()
+        }
+    }
+    
+    func postErrorInEvents(error: Error) {
         print(error.localizedDescription)
     }
     

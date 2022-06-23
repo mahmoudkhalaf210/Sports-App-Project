@@ -11,3 +11,8 @@ import Foundation
 protocol ApiServicesOfTeams {
     func fetchDataOfTeams(endPoint : String , Completion: @escaping (([Team]? , Error?) -> Void ))
 }
+
+
+protocol ApiServicesOfEvents {
+    func fetchDataOfEvents(endPoint : String , Completion : @escaping (([Event]? , Error?) ->Void ) )
+}

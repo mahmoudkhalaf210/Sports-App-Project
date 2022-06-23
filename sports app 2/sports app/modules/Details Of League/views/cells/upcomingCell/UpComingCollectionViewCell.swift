@@ -12,9 +12,19 @@ class UpComingCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var dateOfEvent: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func setUpdata(event : Event) {
+        
+        eventName.text = event.strEvent
+        dateOfEvent.text = event.dateEvent
+        timeOfEvent.text = event.strTime
+        
+        
+    }
 }

@@ -30,6 +30,10 @@
 		E2ADE1C72863DAF80033AB1D /* ContractOfDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADE1C62863DAF80033AB1D /* ContractOfDetails.swift */; };
 		E2ADE1C92863DC1F0033AB1D /* NetworkMangerInDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADE1C82863DC1F0033AB1D /* NetworkMangerInDetails.swift */; };
 		E2ADE1CB2863E5A90033AB1D /* URlEncode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADE1CA2863E5A90033AB1D /* URlEncode.swift */; };
+		E2ADE1CD2863FACF0033AB1D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADE1CC2863FACF0033AB1D /* Event.swift */; };
+		E2ADE1CF2863FF6A0033AB1D /* presenterInDetailsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADE1CE2863FF6A0033AB1D /* presenterInDetailsEvent.swift */; };
+		E2ADE1D1286400250033AB1D /* DetailsEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADE1D0286400250033AB1D /* DetailsEventModel.swift */; };
+		E2ADE1D3286400BB0033AB1D /* EventNetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADE1D2286400BB0033AB1D /* EventNetworkManger.swift */; };
 		E2D2C08A285F7F4F003873E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2C089285F7F4F003873E7 /* AppDelegate.swift */; };
 		E2D2C08C285F7F4F003873E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2C08B285F7F4F003873E7 /* SceneDelegate.swift */; };
 		E2D2C08E285F7F4F003873E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2C08D285F7F4F003873E7 /* ViewController.swift */; };
@@ -81,6 +85,10 @@
 		E2ADE1C62863DAF80033AB1D /* ContractOfDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractOfDetails.swift; sourceTree = "<group>"; };
 		E2ADE1C82863DC1F0033AB1D /* NetworkMangerInDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMangerInDetails.swift; sourceTree = "<group>"; };
 		E2ADE1CA2863E5A90033AB1D /* URlEncode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URlEncode.swift; sourceTree = "<group>"; };
+		E2ADE1CC2863FACF0033AB1D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E2ADE1CE2863FF6A0033AB1D /* presenterInDetailsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = presenterInDetailsEvent.swift; sourceTree = "<group>"; };
+		E2ADE1D0286400250033AB1D /* DetailsEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEventModel.swift; sourceTree = "<group>"; };
+		E2ADE1D2286400BB0033AB1D /* EventNetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventNetworkManger.swift; sourceTree = "<group>"; };
 		E2D2C086285F7F4F003873E7 /* sports app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sports app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D2C089285F7F4F003873E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2D2C08B285F7F4F003873E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -261,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				E2ADE1C82863DC1F0033AB1D /* NetworkMangerInDetails.swift */,
+				E2ADE1D2286400BB0033AB1D /* EventNetworkManger.swift */,
 			);
 			path = NetworkManger;
 			sourceTree = "<group>";
@@ -285,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				E2ADE1C22863DAB80033AB1D /* PresenteriNDetails.swift */,
+				E2ADE1CE2863FF6A0033AB1D /* presenterInDetailsEvent.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -293,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				E2ADE1C02863D8160033AB1D /* Team.swift */,
+				E2ADE1CC2863FACF0033AB1D /* Event.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				E2ADE1C42863DAE10033AB1D /* ModelControllerInDetails.swift */,
+				E2ADE1D0286400250033AB1D /* DetailsEventModel.swift */,
 			);
 			path = ModelCOntroller;
 			sourceTree = "<group>";
@@ -613,11 +625,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2D2C0B2285F9AE3003873E7 /* Sport.swift in Sources */,
+				E2ADE1D3286400BB0033AB1D /* EventNetworkManger.swift in Sources */,
 				E2D2C0BB285FB756003873E7 /* JsonDecoder.swift in Sources */,
 				E2ADE1C32863DAB80033AB1D /* PresenteriNDetails.swift in Sources */,
 				E20289C4285FEF0000A6F150 /* LeaguesModelController.swift in Sources */,
 				E20289C0285FED3000A6F150 /* LeaguesContract.swift in Sources */,
 				E20289B3285FE46300A6F150 /* LeaguesViewController.swift in Sources */,
+				E2ADE1CD2863FACF0033AB1D /* Event.swift in Sources */,
 				E2D2C0B8285FB6FC003873E7 /* Network manger.swift in Sources */,
 				E2D2C08E285F7F4F003873E7 /* ViewController.swift in Sources */,
 				E2D2C0BD285FB903003873E7 /* SportsContract.swift in Sources */,
@@ -638,9 +652,11 @@
 				E20289CA285FF0E100A6F150 /* ApiServices.swift in Sources */,
 				E2D2C0AD285F865F003873E7 /* sportsCollectionViewCell.swift in Sources */,
 				E20289CC285FF14D00A6F150 /* NetworkManger.swift in Sources */,
+				E2ADE1D1286400250033AB1D /* DetailsEventModel.swift in Sources */,
 				E2D2C0B0285F867A003873E7 /* SportsViewController.swift in Sources */,
 				E2ADE1C72863DAF80033AB1D /* ContractOfDetails.swift in Sources */,
 				E2D2C0BF285FBA1B003873E7 /* SportsModelController.swift in Sources */,
+				E2ADE1CF2863FF6A0033AB1D /* presenterInDetailsEvent.swift in Sources */,
 				E2D2C094285F7F4F003873E7 /* sports_app.xcdatamodeld in Sources */,
 				E2ADE1C52863DAE10033AB1D /* ModelControllerInDetails.swift in Sources */,
 				E2D2C08C285F7F4F003873E7 /* SceneDelegate.swift in Sources */,
