@@ -64,6 +64,7 @@ extension FavouriteViewController: DeletionDelegate{
 
 
 extension FavouriteViewController : UITableViewDelegate {
+  
     
 }
 
@@ -145,5 +146,6 @@ extension FavouriteViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let secondVC = segue.destination as! DetailsViewController
         secondVC.strleague = leagueList[selectedRow].strleague
+        secondVC.idLeage = leagueList[selectedRow].idleague
     }
 }

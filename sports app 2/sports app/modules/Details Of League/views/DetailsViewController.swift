@@ -21,11 +21,15 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var teamsCollectionView: UICollectionView!
     
     
+    var selectedRowINTeam : Int = 0
+
     
     // teams
     var teams = [Team]()
     // events
     var events = [Event]()
+    // latest event
+    var LatestEvents = [Event]()
     
     // dBmanger
     var db = DBmanger.sharedInstance
@@ -36,7 +40,10 @@ class DetailsViewController: UIViewController {
     var getFavouriteList :[LeagueItem] = []
 
     var league : League?
+    
+    // fromfavourite in core data
     var strleague : String?
+    var idLeage : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,14 +79,37 @@ class DetailsViewController: UIViewController {
         
         
         // data presenter of teams
-        let teamPresenter : ITeamPresenter = DetailsPresenter(teamsview: self)
-        teamPresenter.fetchDataOfTeams(endPoint: (league?.strLeague)!)
+       
+        fetchdataFromTeamPresenter(str: league?.strLeague)
         
         // data presenter of events
-        let eventPresenter : IEventPresenter = PresenterInEventDetails(eventsView: self)
-        eventPresenter.fetchdataOfEvents(endPoint: (league?.idLeague)!)
+       
         
 
+    }
+    
+    // MARK: - func to check if data from sports or from coredata
+
+    func fetchdataFromTeamPresenter(str : String?){
+        if str != nil {
+            // data from sports
+        let teamPresenter : ITeamPresenter = DetailsPresenter(teamsview: self)
+            teamPresenter.fetchDataOfTeams(endPoint: (league?.strLeague)!)
+            
+        let eventPresenter : IEventPresenter = PresenterInEventDetails(eventsView: self)
+            eventPresenter.fetchdataOfEvents(endPoint: (league?.idLeague)!)
+            
+        }else{
+            // data from core data
+            let teamPresenter : ITeamPresenter = DetailsPresenter(teamsview: self)
+                teamPresenter.fetchDataOfTeams(endPoint: strleague!)
+                
+            let eventPresenter : IEventPresenter = PresenterInEventDetails(eventsView: self)
+                eventPresenter.fetchdataOfEvents(endPoint: idLeage!)
+            
+        }
+        
+     
     }
     
     
@@ -146,14 +176,27 @@ extension DetailsViewController : UICollectionViewDelegateFlowLayout {
         {
             return CGSize(width:400, height: 170)
         }
-        return CGSize(width:170, height: 170)
+        return CGSize(width:150, height: 140)
     }
 }
 
 
 // MARK: - add didselect to cells in any collection view
 
-extension DetailsViewController : UICollectionViewDelegate {}
+extension DetailsViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == teamsCollectionView {
+            
+            selectedRowINTeam = indexPath.row
+            performSegue(withIdentifier: "gotodetail", sender: nil)
+           // let vc2 = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailsOfTeamViewController
+           // vc2.makeSetupdata(team: teams[indexPath.row])
+
+           // present(vc2, animated: true, completion: nil)
+            
+        }
+    }
+}
 
 
 // MARK: - add data source to cells in any collection view
@@ -198,6 +241,7 @@ extension DetailsViewController : UICollectionViewDataSource {
         else {
             let cell : TeamsCollectionViewCell = (teamsCollectionView.dequeueReusableCell(withReuseIdentifier: "teams", for: indexPath) as? TeamsCollectionViewCell)!
             cell.setupdata(team: teams[indexPath.row])
+
             return cell
         }
     }
@@ -243,3 +287,18 @@ extension DetailsViewController : IEventView {
 }
 
 
+
+
+// MARK: - prepare for segue to Details of team
+
+extension DetailsViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc2 = segue.destination as! DetailsOfTeamViewController
+        vc2.imageTeam = teams[selectedRowINTeam].strStadiumThumb
+        vc2.strAlt =  teams[selectedRowINTeam].strAlternate
+        vc2.stringTeam = teams[selectedRowINTeam].strTeam
+        vc2.dest1 = teams[selectedRowINTeam].strDescriptionFR
+        vc2.dest2 = teams[selectedRowINTeam].strDescriptionEN
+        vc2.dest3 = teams[selectedRowINTeam].strDescriptionDE
+    }
+}

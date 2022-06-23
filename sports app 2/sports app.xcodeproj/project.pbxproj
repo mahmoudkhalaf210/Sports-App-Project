@@ -58,6 +58,7 @@
 		E2D721B128612E58008230D5 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D721B028612E58008230D5 /* FavouriteViewController.swift */; };
 		E2D721B5286138D5008230D5 /* cellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D721B3286138D5008230D5 /* cellTableViewCell.swift */; };
 		E2D721B6286138D5008230D5 /* cellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D721B4286138D5008230D5 /* cellTableViewCell.xib */; };
+		E2FAD86B28648B1000B2A48D /* DetailsOfTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FAD86A28648B1000B2A48D /* DetailsOfTeamViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		E2D721B028612E58008230D5 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		E2D721B3286138D5008230D5 /* cellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellTableViewCell.swift; sourceTree = "<group>"; };
 		E2D721B4286138D5008230D5 /* cellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cellTableViewCell.xib; sourceTree = "<group>"; };
+		E2FAD86A28648B1000B2A48D /* DetailsOfTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsOfTeamViewController.swift; sourceTree = "<group>"; };
 		E4CC80752D1390D1C0FD2C71 /* Pods-sports app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sports app.debug.xcconfig"; path = "Target Support Files/Pods-sports app/Pods-sports app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -355,6 +357,7 @@
 		E2D2C0A0285F84D3003873E7 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				E2FAD86828648AD700B2A48D /* Details Of Team */,
 				E2D721AE28612E2F008230D5 /* Favourite Module */,
 				E2D721A82860A8F8008230D5 /* Details Of League */,
 				E20289B0285FE29500A6F150 /* Leagues Module */,
@@ -503,6 +506,22 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		E2FAD86828648AD700B2A48D /* Details Of Team */ = {
+			isa = PBXGroup;
+			children = (
+				E2FAD86928648AE500B2A48D /* View */,
+			);
+			path = "Details Of Team";
+			sourceTree = "<group>";
+		};
+		E2FAD86928648AE500B2A48D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2FAD86A28648B1000B2A48D /* DetailsOfTeamViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -633,6 +652,7 @@
 				E20289B3285FE46300A6F150 /* LeaguesViewController.swift in Sources */,
 				E2ADE1CD2863FACF0033AB1D /* Event.swift in Sources */,
 				E2D2C0B8285FB6FC003873E7 /* Network manger.swift in Sources */,
+				E2FAD86B28648B1000B2A48D /* DetailsOfTeamViewController.swift in Sources */,
 				E2D2C08E285F7F4F003873E7 /* ViewController.swift in Sources */,
 				E2D2C0BD285FB903003873E7 /* SportsContract.swift in Sources */,
 				E2ADE1BF2863D76A0033AB1D /* ApiServicesDetail.swift in Sources */,

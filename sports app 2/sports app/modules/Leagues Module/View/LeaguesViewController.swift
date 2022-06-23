@@ -51,7 +51,7 @@ extension LeaguesViewController : UITableViewDataSource {
         // link
         cell?.delegate = self
        cell?.index = indexPath
-        // make radius to cell and make image circle 
+        // make radius to cell
         cell?.MyView.layer.cornerRadius = (cell?.MyView.frame.height)! / 2
         cell?.imageLeagueInCell.layer.cornerRadius = (cell?.imageLeagueInCell.frame.height)! / 2
         return cell!

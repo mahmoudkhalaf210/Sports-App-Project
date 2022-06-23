@@ -34,5 +34,6 @@ class Team : Codable {
     var strWebsite : String?
     var strAlternate : String?
     var strTeamShort : String?
+    var strStadiumThumb : String?
     
 }
