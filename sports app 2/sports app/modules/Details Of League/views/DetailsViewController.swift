@@ -10,7 +10,6 @@ import CoreData
 
 class DetailsViewController: UIViewController {
 
-    
 
     @IBOutlet weak var headerOfLeague: UILabel!
     @IBOutlet weak var favouriteButton: UIButton!
@@ -20,7 +19,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var latestResultCollectionView: UICollectionView!
     @IBOutlet weak var teamsCollectionView: UICollectionView!
     
-    
+    // to detail of team using segue
     var selectedRowINTeam : Int = 0
 
     
@@ -48,42 +47,34 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        // data presenter of teams
+        fetchdataFromTeamPresenter(str: league?.strLeague)
+        
         // Do any additional setup after loading the view.
         headerOfLeague.text = "\(league?.strLeague ?? "Khalifa" )"
         
-        
-        
+
         // define cells into view
         upComingCollectionView.register(UINib(nibName: "UpComingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "upcoming")
         latestResultCollectionView.register(UINib(nibName: "LatestResultCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "latest")
         teamsCollectionView.register(UINib(nibName: "TeamsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "teams")
         
+        
+        // MARK: - Edit to collections
+
         upComingCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         latestResultCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         teamsCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
-        
-        
         let layoutUpcoming = UICollectionViewFlowLayout()
         let layoutlateset = UICollectionViewFlowLayout()
         let layoutTeams = UICollectionViewFlowLayout()
-        
         layoutUpcoming.scrollDirection = .horizontal
         layoutlateset.scrollDirection = .vertical
         layoutTeams.scrollDirection = .horizontal
-        
         upComingCollectionView.collectionViewLayout = layoutUpcoming
         latestResultCollectionView.collectionViewLayout = layoutlateset
         teamsCollectionView.collectionViewLayout = layoutTeams
-        
-        
-        
-        // data presenter of teams
-       
-        fetchdataFromTeamPresenter(str: league?.strLeague)
-        
-        // data presenter of events
-       
-        
 
     }
     
@@ -107,34 +98,26 @@ class DetailsViewController: UIViewController {
                 eventPresenter.fetchdataOfEvents(endPoint: idLeage!)
             
         }
-        
-     
     }
-    
-    
+
   
     // MARK: - button to make league favourite
     @IBAction func addColorFavorite(_ sender: Any) {
-       // for item in getFavouriteList {
-          /*  if item.strleague == league?.strLeague{
-                print("not add item ")
-            }else {*/
-        
+    
         if let image = UIImage(systemName: "heart.fill") {
             favouriteButton.setImage(image, for: .normal)
         }
         
-        
         db.addLeague(AppDelegate: appDelegate , idleague: league?.idLeague ?? "", strleague: league?.strLeague ?? "", strsport: league?.strSport ?? "" , strBadge: league?.strBadge ?? ""  , strYoutube: league?.strYoutube ?? "" )
-        
-        // make red color
-               // makeColorFavourite()
+    
 
     }
     
     // MARK: - function make check if league inside in favourites and change color
     override func viewWillAppear(_ animated: Bool) {
-        
+
+        // did select from favourite
+        checkifFromFavourite()
         favouriteButton.layer.cornerRadius = 5
         getFavouriteList = db.fetchData(appDelegate: appDelegate)
         for item in getFavouriteList {
@@ -147,15 +130,18 @@ class DetailsViewController: UIViewController {
             }
         }
     }
-    
-
 }
 
 
 // MARK: - function make color to favourite
 extension DetailsViewController {
-    func makeColorFavourite() {
-        favouriteButton.backgroundColor = UIColor.red
+    func checkifFromFavourite() {
+        if strleague != nil {
+            if let image = UIImage(systemName: "heart.fill") {
+                favouriteButton.setImage(image, for: .normal)
+                
+            }
+        }
     }
     
 }
@@ -188,11 +174,7 @@ extension DetailsViewController : UICollectionViewDelegate {
             
             selectedRowINTeam = indexPath.row
             performSegue(withIdentifier: "gotodetail", sender: nil)
-           // let vc2 = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailsOfTeamViewController
-           // vc2.makeSetupdata(team: teams[indexPath.row])
-
-           // present(vc2, animated: true, completion: nil)
-            
+        
         }
     }
 }
@@ -290,8 +272,6 @@ extension DetailsViewController : IEventView {
 }
 
 
-
-
 // MARK: - prepare for segue to Details of team
 
 extension DetailsViewController {
@@ -308,7 +288,6 @@ extension DetailsViewController {
 
 
 
-// MARK: - make data of latest events (sort events and make it latest)
 
 
 

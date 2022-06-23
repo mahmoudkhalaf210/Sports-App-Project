@@ -15,7 +15,9 @@ class LeagueTableViewCell: UITableViewCell {
     
     @IBOutlet weak var MyView: UIView!
     
+    // delegate of protocol web view
     var delegate : WebViewProtocol?
+    // index path to save from leagues screen
     var index : IndexPath?
     
     
@@ -34,10 +36,11 @@ class LeagueTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-
         // Configure the view for the selected state
     }
     
+    // MARK: - setup data from sport json or core data
+
     func SetupLeagueInCell(league : League?, leagueItem : LeagueItem?) {
         
         if league != nil {

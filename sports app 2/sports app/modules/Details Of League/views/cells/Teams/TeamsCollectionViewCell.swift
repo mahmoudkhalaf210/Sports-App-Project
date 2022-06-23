@@ -21,7 +21,6 @@ class TeamsCollectionViewCell: UICollectionViewCell {
         
     }
 
-    
     func setupdata (team : Team) {
         imageOfTeam.sd_setImage(with: URL(string: "\(team.strTeamBadge!)"), placeholderImage: UIImage(named: "luffy.jpeg"))
     }

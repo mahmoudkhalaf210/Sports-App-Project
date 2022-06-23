@@ -47,3 +47,19 @@ protocol IEventModel {
     func fetchDataOfEventsFromApi(endPoint : String)
 }
 
+
+// latest
+
+protocol ILatesetView{
+    func renderLatestResultData()
+    
+}
+
+protocol ILatesetPresenter {
+    
+    
+}
+
+protocol ILatestModel {
+    }
+

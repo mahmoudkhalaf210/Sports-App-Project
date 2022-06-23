@@ -16,3 +16,7 @@ protocol ApiServicesOfTeams {
 protocol ApiServicesOfEvents {
     func fetchDataOfEvents(endPoint : String , Completion : @escaping (([Event]? , Error?) ->Void ) )
 }
+
+protocol ApiServicesOfLatestResult {
+    func fetchDataOFResults(endPoint : String , Completion : @escaping (([Event]? , Error?) -> Void))
+}

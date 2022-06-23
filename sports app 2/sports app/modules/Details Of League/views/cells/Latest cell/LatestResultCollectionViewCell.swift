@@ -27,10 +27,8 @@ class LatestResultCollectionViewCell: UICollectionViewCell {
     func setupDataInLateset(event : Event){
         firstTeam.text = event.strHomeTeam
         secondTeam.text = event.strAwayTeam
-        
         firstTeamScore.text = event.intHomeScore
         secondTeamScore.text = event.intAwayScore
-        
         dateOfMatch.text = event.dateEventLocal
         timeOfmatch.text = event.strTimeLocal
     }

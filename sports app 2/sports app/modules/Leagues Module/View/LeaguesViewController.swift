@@ -10,6 +10,7 @@ import UIKit
 
 class LeaguesViewController: UIViewController {
     
+    // to go to details using segue
     var selectedRow : Int = 0
 
     @IBOutlet weak var myTableView: UITableView!
@@ -23,10 +24,6 @@ class LeaguesViewController: UIViewController {
         super.viewDidLoad()
         
         
-        
-
-        
-    
         myTableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: "leaguecell")
         // collection view cell regitser
         
@@ -92,10 +89,6 @@ extension LeaguesViewController : ILeaguesView {
 }
 
 
-
-
-
-
 // MARK: - Implementation of Protocol  <<<< link to WebView
 
 extension LeaguesViewController : WebViewProtocol {
@@ -104,21 +97,13 @@ extension LeaguesViewController : WebViewProtocol {
         vc?.youtube = leagues[index].strYoutube 
         present(vc!, animated: true, completion: nil)
     }
-    
-    // link = leagues[index].link
-  
-    
-    
-    
 }
 
 
 // MARK: - prepare For Segue
 
 extension LeaguesViewController {
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
         let secondVC = segue.destination as! DetailsViewController
         secondVC.league = leagues[selectedRow]
     }
