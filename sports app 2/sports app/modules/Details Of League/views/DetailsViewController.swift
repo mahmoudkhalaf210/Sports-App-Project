@@ -42,7 +42,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        headerOfLeague.text = "\(league?.strLeague ?? "ahmed" )"
+        headerOfLeague.text = "\(league?.strLeague ?? "Khalifa" )"
         
         
         
@@ -90,11 +90,17 @@ class DetailsViewController: UIViewController {
           /*  if item.strleague == league?.strLeague{
                 print("not add item ")
             }else {*/
+        
+        if let image = UIImage(systemName: "heart.fill") {
+            favouriteButton.setImage(image, for: .normal)
+        }
+        
+        
         db.addLeague(AppDelegate: appDelegate , idleague: league?.idLeague ?? "", strleague: league?.strLeague ?? "", strsport: league?.strSport ?? "" , strBadge: league?.strBadge ?? ""  , strYoutube: league?.strYoutube ?? "" )
-                makeColorFavourite()
-    
-            //}
- //   }
+        
+        // make red color
+               // makeColorFavourite()
+
     }
     
     // MARK: - function make check if league inside in favourites and change color
@@ -104,7 +110,11 @@ class DetailsViewController: UIViewController {
         getFavouriteList = db.fetchData(appDelegate: appDelegate)
         for item in getFavouriteList {
             if item.strleague == league?.strLeague{
-                makeColorFavourite()
+               // makeColorFavourite()
+                if let image = UIImage(systemName: "heart.fill") {
+                    favouriteButton.setImage(image, for: .normal)
+                    
+                }
             }
         }
     }
@@ -124,6 +134,7 @@ extension DetailsViewController {
 
 
 
+// MARK: - add width and height to cells in any collection view
 
 extension DetailsViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -140,9 +151,12 @@ extension DetailsViewController : UICollectionViewDelegateFlowLayout {
 }
 
 
+// MARK: - add didselect to cells in any collection view
 
 extension DetailsViewController : UICollectionViewDelegate {}
 
+
+// MARK: - add data source to cells in any collection view
 
 extension DetailsViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -188,13 +202,12 @@ extension DetailsViewController : UICollectionViewDataSource {
         }
     }
     
-    
-    
 }
 
 
 
 
+// MARK: - add team View
 
 extension DetailsViewController : ITeamView {
     func renderTeams(teams: [Team]) {
@@ -211,6 +224,8 @@ extension DetailsViewController : ITeamView {
     }
     
 }
+
+// MARK: - add Event View
 
 extension DetailsViewController : IEventView {
     func renderEvents(events: [Event]) {
