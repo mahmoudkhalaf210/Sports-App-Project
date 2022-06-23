@@ -4,61 +4,56 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="collectioncell" id="gTV-IL-0wX" customClass="sportsCollectionViewCell" customModule="sports_app" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="190" height="250"/>
+            <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="190" height="250"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="luffy" translatesAutoresizingMaskIntoConstraints="NO" id="tzJ-Cy-8ar">
-                        <rect key="frame" x="10" y="10" width="170" height="180"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="180" id="F34-gp-Og8"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9v-Mh-SlM">
-                        <rect key="frame" x="15" y="190" width="160" height="50"/>
+                        <rect key="frame" x="10" y="240" width="180" height="35"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="eDX-IU-Zm6"/>
+                            <constraint firstAttribute="height" constant="35" id="8Pl-E6-GPd"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="italicSystem" pointSize="19"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                        <color key="shadowColor" systemColor="labelColor"/>
+                        <color key="textColor" red="0.080398969352245331" green="0.03333035483956337" blue="0.021571019664406776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="highlightedColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="shadowColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <size key="shadowOffset" width="0.0" height="1"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="luffy" translatesAutoresizingMaskIntoConstraints="NO" id="tzJ-Cy-8ar">
+                        <rect key="frame" x="10" y="10" width="180" height="220"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="220" id="fbr-4V-B0c"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="b9v-Mh-SlM" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="5u2-NK-d0S"/>
-                <constraint firstItem="b9v-Mh-SlM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="CAQ-xg-xGl"/>
-                <constraint firstAttribute="bottom" secondItem="b9v-Mh-SlM" secondAttribute="bottom" constant="10" id="Meq-Rh-otN"/>
-                <constraint firstItem="tzJ-Cy-8ar" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="drJ-WZ-o3V"/>
-                <constraint firstAttribute="trailing" secondItem="tzJ-Cy-8ar" secondAttribute="trailing" constant="10" id="fYY-Je-dDF"/>
-                <constraint firstItem="tzJ-Cy-8ar" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="hCs-GH-Icg"/>
-                <constraint firstItem="tzJ-Cy-8ar" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="uHW-6o-gil"/>
-                <constraint firstAttribute="trailing" secondItem="b9v-Mh-SlM" secondAttribute="trailing" constant="15" id="wLt-4Q-SJx"/>
+                <constraint firstItem="b9v-Mh-SlM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="2zT-Fu-WsU"/>
+                <constraint firstItem="tzJ-Cy-8ar" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="56w-K7-Yj8"/>
+                <constraint firstAttribute="trailing" secondItem="b9v-Mh-SlM" secondAttribute="trailing" constant="10" id="dlY-y1-A8g"/>
+                <constraint firstAttribute="trailing" secondItem="tzJ-Cy-8ar" secondAttribute="trailing" constant="10" id="hkz-3i-vrP"/>
+                <constraint firstItem="tzJ-Cy-8ar" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="qWb-zM-95h"/>
+                <constraint firstItem="b9v-Mh-SlM" firstAttribute="top" secondItem="tzJ-Cy-8ar" secondAttribute="bottom" constant="10" id="zpd-Ve-i2Z"/>
             </constraints>
+            <size key="customSize" width="200" height="300"/>
             <connections>
                 <outlet property="imageOfSport" destination="tzJ-Cy-8ar" id="6Ds-Po-Ja8"/>
                 <outlet property="titleOfSport" destination="b9v-Mh-SlM" id="Dqc-c8-Ph5"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="107.8125"/>
+            <point key="canvasLocation" x="144.92753623188406" y="124.55357142857142"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="luffy" width="375" height="666"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

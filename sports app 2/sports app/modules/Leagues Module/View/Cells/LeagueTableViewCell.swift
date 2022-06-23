@@ -13,6 +13,7 @@ class LeagueTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLeagueInCell: UILabel!
     @IBOutlet weak var imageLeagueInCell: UIImageView!
     
+    @IBOutlet weak var MyView: UIView!
     
     var delegate : WebViewProtocol?
     var index : IndexPath?
@@ -30,12 +31,9 @@ class LeagueTableViewCell: UITableViewCell {
         delegate?.onClickButton(index: (index?.row)! )
     }
     
-    
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        makeImageCircle()
 
         // Configure the view for the selected state
     }
@@ -52,30 +50,8 @@ class LeagueTableViewCell: UITableViewCell {
             }
         
     }
-    
-    func makeImageCircle(){
 
-        imageLeagueInCell.layer.masksToBounds = true
-        imageLeagueInCell.layer.cornerRadius = imageLeagueInCell.frame.height / 2
-        
-        imageLeagueInCell.layer.shadowColor = UIColor.red.cgColor
-        imageLeagueInCell.layer.shadowOffset = CGSize(width: 5 , height: 5)
-        imageLeagueInCell.layer.shadowOpacity = 1
-        imageLeagueInCell.layer.shadowRadius = 10
-    }
-    
-    
-    
-    
-    
-    
-    
-    
 }
-
-
-
-
 
 // MARK: - Protocol  <<<< link to WebView
 

@@ -135,7 +135,7 @@ extension DetailsViewController : UICollectionViewDelegateFlowLayout {
         {
             return CGSize(width:400, height: 170)
         }
-        return CGSize(width:250, height: 200)
+        return CGSize(width:170, height: 170)
     }
 }
 

@@ -51,14 +51,14 @@ extension LeaguesViewController : UITableViewDataSource {
         // link
         cell?.delegate = self
        cell?.index = indexPath
-        // make radius to cell
-        cell?.clipsToBounds = true
-        cell?.layer.cornerRadius = 50
+        // make radius to cell and make image circle 
+        cell?.MyView.layer.cornerRadius = (cell?.MyView.frame.height)! / 2
+        cell?.imageLeagueInCell.layer.cornerRadius = (cell?.imageLeagueInCell.frame.height)! / 2
         return cell!
     }
    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 100
     }
 
 }

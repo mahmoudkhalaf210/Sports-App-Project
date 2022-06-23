@@ -19,8 +19,15 @@ class WebViewViewController: UIViewController {
         super.viewDidLoad()
 
         print(youtube!)
+        MyWebView.configuration.allowsInlineMediaPlayback = true
         
-        MyWebView.load(URLRequest(url: URL(string: "https://www.youtube.com/channel/UC3Guly6AbOr3PqrZMaV6vog" )!))
+        MyWebView.loadHTMLString(youtube!, baseURL: nil)
+        
+     /*  let url = URL(string: youtube!)
+        let request = URLRequest(url: url!)
+        MyWebView.load(request)*/
+        
+       // MyWebView.load(URLRequest(url: URL(string: "https://www.youtube.com/channel/UC3Guly6AbOr3PqrZMaV6vog" )!))
         
         //"https://www.youtube.com/watch?v=i2yhyaNb4ac"
 

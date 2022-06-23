@@ -14,7 +14,7 @@ class SportsViewController: UIViewController {
     // sports
     var sports = [Sport]()
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,8 +26,7 @@ class SportsViewController: UIViewController {
         // collection view cell regitser
         myCollectionView.register(UINib(nibName: "sportsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "collectioncell")
         // width and height of cell
-        myCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
-        
+     myCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         
 }
     
@@ -44,8 +43,7 @@ extension SportsViewController : UICollectionViewDelegate{
         let secondVc = storyboard?.instantiateViewController(withIdentifier: "league") as! LeaguesViewController
         secondVc.strSport = sports[indexPath.row].strSport
         navigationController?.pushViewController(secondVc, animated: true)
-        
-        
+    
     }
     
 }
@@ -54,7 +52,6 @@ extension SportsViewController : UICollectionViewDelegate{
 // MARK: - Collection View DataSource
 
 extension SportsViewController : UICollectionViewDataSource{
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sports.count
     }
@@ -63,12 +60,9 @@ extension SportsViewController : UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectioncell", for: indexPath) as? sportsCollectionViewCell
         
         cell?.setupDataInCell(sport: sports[indexPath.row])
-        
-        
         // make radius to cell 
         cell?.clipsToBounds = true
         cell?.layer.cornerRadius = 15
-        
         return cell!
     }
     
@@ -79,7 +73,9 @@ extension SportsViewController : UICollectionViewDataSource{
 
 extension SportsViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 170, height: 250)
+        // make size 2 to any screen
+        let size = (myCollectionView.frame.size.width - 10)/2
+        return CGSize(width: size , height: 280)
     }
 }
 
